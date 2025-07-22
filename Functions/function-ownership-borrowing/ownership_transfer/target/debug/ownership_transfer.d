@@ -1,0 +1,1 @@
+C:\Users\tonyn\Desktop\rusty-things\Functions\function-ownership-borrowing\ownership_transfer\target\debug\ownership_transfer.exe: C:\Users\tonyn\Desktop\rusty-things\Functions\function-ownership-borrowing\ownership_transfer\src\main.rs
