@@ -2,13 +2,13 @@ use std::io;
 
 fn main() {
     loop {
-        println("\n--- the playground ---");
-        println("uno. greet");
-        println("dos. square numbers");
-        println("tres. compare");
-        println("cuatro. string length");
-        println("cinco. multiply using closure");
-        println("cero. exit");
+        println!("\n--- the playground ---");
+        println!("uno. greet");
+        println!("dos. square numbers");
+        println!("tres. compare");
+        println!("cuatro. string length");
+        println!("cinco. multiply using closure");
+        println!("cero. exit");
 
         let choice = read_input("enter your choice: ");
 
@@ -47,3 +47,33 @@ fn main() {
 }
 
 // function definations
+fn read_input(prompt: &str) -> String {
+    use std::io::Write;
+    print!("{}", prompt);
+    io::stdout().flush().unwrap();
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    input
+}
+
+fn greet(name: &str) {
+    println!("howdy! {}, welcome to the rusty club", name);
+}
+
+fn square(n: i32) -> i32 {
+    n * n
+}
+
+fn compare (a: i32, b: i32) -> &'static str {
+    if a > b {
+        "greater"
+    } else if a < b {
+        "less"
+    } else {
+        "equal"
+    }
+}
+
+fn string_length(s: &str) -> usize {
+    s.len()
+}
