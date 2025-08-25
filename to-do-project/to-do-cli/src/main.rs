@@ -31,4 +31,25 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+fn add_task(tasks: &mut Vec<Task>) -> Result<(), Box<dyn std::error::Error>> {
+    print!("Enter task description: ");
+    io::stdout().flush()?;
 
+    let mut desc = String::new();
+    io::stdin().read_line(&mut desc)?;
+    let desc = desc.trim();
+
+    if desc.is_empty() {
+        println!("Task description cannot be empty.");
+        return Ok(());
+    }
+
+    tasks.push(Task {
+        description: desc.to_string(),
+        completed: false,
+    });
+
+    println!("Task addded: {}", desc);
+
+    Ok(())
+}
